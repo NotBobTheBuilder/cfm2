@@ -1,14 +1,27 @@
 function initCFM() {
     switch($('#pageIdentifier')[0].getAttribute('page')) {
         case 'thegrid':
-            initTheGrid();
+            updateTimetable();
             break;
     }
 }
 window.onload=initCFM;
 
-function initTheGrid() {
-    updateTimetable();
+function updateTimetable() {
+    $.mobile.showPageLoadingMsg()
+    $.ajax({
+        type: 'GET',
+        url: localStorage.getItem('CFMurl')+"timetable",
+        dataType: 'json',
+        cache: false,
+        success: function(campfireData) {
+            drawTheGrid(campfireData);
+        },
+        error: function() {
+            drawTheGrid(false);
+        }
+    });
+    $.mobile.hidePageLoadingMsg();
 }
 
 function drawTheGrid(campfireData) {
@@ -92,23 +105,6 @@ function renderTalk(k, t, c) {
         c++;
     }
     return [talkdata, c];
-}
-
-function updateTimetable() {
-    $.mobile.showPageLoadingMsg()
-    $.ajax({
-        type: 'GET',
-        url: localStorage.getItem('CFMurl')+"timetable",
-        dataType: 'json',
-        cache: false,
-        success: function(campfireData) {
-            drawTheGrid(campfireData);
-        },
-        error: function() {
-            drawTheGrid(false);
-        }
-    });
-    $.mobile.hidePageLoadingMsg();
 }
 
 function parseJSON(json) {

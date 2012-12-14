@@ -13,7 +13,7 @@
         <input type="hidden" id="pageIdentifier" page="thegrid" />
 		<div data-role="page" id="timetable">
 			<div data-role="header">
-				<a href="#" data-icon="refresh">Refresh</a>
+				<a data-icon="refresh" onclick='updateTimetable()'>Refresh</a>
 				<h1><!--SM:if isset($SiteConfig['Site_Name']):SM--><!--SM:$SiteConfig['Site_Name']:SM--><!--SM:else:SM-->Campfire Manager<!--SM:/if:SM--></h1>
 				<a href="" data-rel="dialog" data-icon="gear">Login</a>
 			</div>
