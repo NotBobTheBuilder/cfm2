@@ -1,3 +1,21 @@
+This is the AppCache branch of CampFireManager2. When this branch gets merged, CFM will be able to function without a network connection.
+
+Done so far:
+
+* Ported Collection_Timetable
+* Implemented localStorage backup of the grid, which is rendered if an update fails
+
+Still to do:
+
+* Login functionality over AJAX
+* Port Talk and Profile pages to AppCache-safe versions
+* Handle transfer of Cache Manifest
+
+End of Branch Specific details :)
+
+=========
+
+
 This is the code I'm developing for the new version of CampFireManager.
 
 It is being developed on GitHub, as I would like to make it easy for people
