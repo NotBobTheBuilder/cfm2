@@ -44,7 +44,7 @@
     <body>
         <div data-role="page" id="theobject">
             <div data-role="header" data-position="fixed">
-                <a href="<!--SM:$SiteConfig.baseurl:SM-->" data-ajax="false" data-icon="grid">Schedule</a>
+                <a href="<!--SM:$SiteConfig.baseurl:SM-->" data-ajax="false" data-icon="bars">Schedule</a>
 <!-- This block replaces the generic title with the Smarty Assigned Site_Name value -->
 <!--SM:if isset($SiteConfig.Site_Name):SM-->
     <!--SM:assign var=title_open value='<h1>':SM-->
@@ -53,15 +53,23 @@
 <!--SM:else:SM-->
                 <h1>Campfire Manager</h1>
 <!--SM:/if:SM-->
+        <fieldset data-role="controlgroup" data-type="horizontal" class="ui-btn-right">
 <!-- This block replaces the generic title with the Smarty Assigned Site_Name value -->
 <!--SM:if isset($Object_User.current) && $Object_User.current != null && $Object_User.current != false:SM-->
     <!--SM:assign var=logout_open value='<a href="':SM-->
     <!--SM:assign var=logout_close value='?logout=1" data-role="button">Logout</a>':SM-->
+    <!--SM:assign var=profile_open value='<a href="':SM-->
+    <!--SM:assign var=profile_close value='user/me" data-role="button" data-icon="home">My Profile':SM-->
+    <!--SM:assign var=profile_tagclose value='</a>':SM-->
     <!--SM:assign var=settings_open value='<a href="':SM-->
-    <!--SM:assign var=settings_close value='user/me" data-role="button" data-icon="gear">My Profile':SM-->
+    <!--SM:assign var=settings_close value='control" data-role="button" data-icon="gear">Manage CFM':SM-->
     <!--SM:assign var=settings_tagclose value='</a>':SM-->
+                <!--SM:$profile_open:SM--><!--SM:$SiteConfig.baseurl:SM--><!--SM:$profile_close:SM--><!--SM:$profile_tagclose:SM-->
+    <!--SM:if $Object_User.current.isAdmin:SM-->
                 <!--SM:$settings_open:SM--><!--SM:$SiteConfig.baseurl:SM--><!--SM:$settings_close:SM--><!--SM:$settings_tagclose:SM-->
+    <!--SM:/if:SM-->
 <!--SM:else:SM-->
                 <a href="#login" data-role="button" data-rel="dialog" data-transition="pop" data-icon="gear">Login</a>
 <!--SM:/if:SM-->
+            </fieldset>
             </div>
