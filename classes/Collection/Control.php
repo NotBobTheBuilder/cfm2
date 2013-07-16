@@ -33,12 +33,16 @@ class Collection_Control extends Abstract_GenericCollection
     {
         $this->arrData['arrRooms'] = array();
         $this->arrData['arrSlots'] = array();
+        $this->arrData['arrDefaultSlotType'] = array();
 
         foreach (Object_Room::brokerAll() as $k => $v) {
             array_push($this->arrData['arrRooms'], $v->getData());
         }
         foreach (Object_Slot::brokerAll() as $k => $v) {
             array_push($this->arrData['arrSlots'], $v->getData());
+        }
+        foreach (Object_DefaultSlotType::brokerAll() as $k => $v) {
+            array_push($this->arrData['arrDefaultSlotType'], $v->getData());
         }
         return $this;
     }

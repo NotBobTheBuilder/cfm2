@@ -11,7 +11,7 @@
                     <!--SM:/foreach:SM-->
                     </ul>
                 </div>
-                <div data-role="collapsible" data-theme="c" data-content-theme="d"><h3>Slots</h3>
+                <div data-role="collapsible"><h3>Slots</h3>
                     <ul data-role="listview">
                     <!--SM:foreach $object.arrSlots as $slot:SM-->
                         <li id="slot-<!--SM:$slot.intSlotID:SM-->">
@@ -25,6 +25,15 @@
                     <!--SM:foreach $object.arrRooms as $room:SM-->
                         <li id="room-<!--SM:$room.intRoomID:SM-->">
                         (ID: <!--SM:$room.intRoomID:SM-->) <!--SM:$room.strRoom:SM-->
+                        </li>
+                    <!--SM:/foreach:SM-->
+                    </ul>
+                </div>
+                <div data-role="collapsible"><h3>Slot Locks</h3>
+                    <ul data-role="listview">
+                    <!--SM:foreach $object.arrDefaultSlotType as $dst:SM-->
+                        <li id="dst-<!--SM:$dst.intDefaultSlotTypeID:SM-->">
+                        (ID: <!--SM:$dst.intDefaultSlotTypeID:SM-->) <!--SM:$dst.strDefaultSlotType:SM-->
                         </li>
                     <!--SM:/foreach:SM-->
                     </ul>
