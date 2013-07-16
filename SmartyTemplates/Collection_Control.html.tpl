@@ -1,6 +1,6 @@
 <!--SM:include file="Common_Object_Header.tpl":SM-->
     <div data-role="content">
-        <div data-role="collapsible-set" id="theobject" data-theme="c" data-content-theme="d"><!--SM:debug:SM-->
+        <div data-role="collapsible-set" id="theobject" data-theme="c" data-content-theme="d">
             <!--SM:foreach $renderPage as $object:SM-->
                 <div data-role="collapsible"><h3>Event</h3>
                     <ul data-role="listview">
