@@ -1,6 +1,6 @@
 <!--SM:include file="Common_Object_Header.tpl":SM-->
     <div data-role="content">
-        <div data-role="collapsible-set" id="theobject" data-theme="c" data-content-theme="d">
+        <div data-role="collapsible-set" id="theobject" data-theme="c" data-content-theme="d"><!--SM:debug:SM-->
             <!--SM:foreach $renderPage as $object:SM-->
                 <div data-role="collapsible"><h3>Event</h3>
                     <ul data-role="listview">
@@ -13,16 +13,16 @@
                 </div>
                 <div data-role="collapsible"><h3>Slots</h3>
                     <ul data-role="listview">
-                    <!--SM:foreach $object.arrSlots as $slot:SM-->
+                    <!--SM:foreach $object.arrSlots as $slotKey => $slot:SM-->
                         <li id="slot-<!--SM:$slot.intSlotID:SM-->">
-                        (ID: <!--SM:$slot.intSlotID:SM-->) <!--SM:$slot.dateStart:SM--> <!--SM:$slot.timeStart:SM--> - <!--SM:$slot.timeEnd:SM-->
+                        (ID: <!--SM:$slot.intSlotID:SM-->) <!--SM:$slot.dateStart:SM--> <!--SM:$slot.timeStart:SM--> - <!--SM:$slot.timeEnd:SM--> <!--SM:if $slot.intDefaultSlotTypeID > 0:SM-->(<!--SM:$object.arrDefaultSlotType[$slot.intDefaultSlotTypeID].strDefaultSlotType:SM-->)<!--SM:/if:SM-->
                         </li>
                     <!--SM:/foreach:SM-->
                     </ul>
                 </div>
                 <div data-role="collapsible"><h3>Rooms</h3>
                     <ul data-role="listview">
-                    <!--SM:foreach $object.arrRooms as $room:SM-->
+                    <!--SM:foreach $object.arrRooms as $roomKey => $room:SM-->
                         <li id="room-<!--SM:$room.intRoomID:SM-->">
                         (ID: <!--SM:$room.intRoomID:SM-->) <!--SM:$room.strRoom:SM-->
                         </li>
@@ -31,7 +31,7 @@
                 </div>
                 <div data-role="collapsible"><h3>Slot Locks</h3>
                     <ul data-role="listview">
-                    <!--SM:foreach $object.arrDefaultSlotType as $dst:SM-->
+                    <!--SM:foreach $object.arrDefaultSlotType as $dstKey => $dst:SM-->
                         <li id="dst-<!--SM:$dst.intDefaultSlotTypeID:SM-->">
                         (ID: <!--SM:$dst.intDefaultSlotTypeID:SM-->) <!--SM:$dst.strDefaultSlotType:SM-->
                         </li>
