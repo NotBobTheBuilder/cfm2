@@ -27,12 +27,9 @@ class Collection_Control extends Abstract_GenericCollection
     /**
      * Collect the data for this collection
      *
-     * @param integer|null $screen The screen ID to return, or null to create a
-     * new screen and reload to that page.
-     * 
      * @return Collection_Control
      */
-    protected function __construct()
+    function __construct()
     {
         $this->arrData['arrRooms'] = array();
         $this->arrData['arrSlots'] = array();
@@ -43,7 +40,6 @@ class Collection_Control extends Abstract_GenericCollection
         foreach (Object_Slot::brokerAll() as $k => $v) {
             array_push($this->arrData['arrSlots'], $v->getData());
         }
-
         return $this;
     }
 }
